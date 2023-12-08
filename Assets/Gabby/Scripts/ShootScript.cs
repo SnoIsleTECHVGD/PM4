@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     public int speed = 5;
+    public int distance;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,26 +23,38 @@ public class ShootScript : MonoBehaviour
         yield return new WaitForSeconds(0.001f);
         int rise = (int) (yLocation - transform.position.y);
         int run = (int) (xLocation - transform.position.x);
-        for (int r = 1000; r > 0; r--)
+        bool risePos = true;
+        bool runPos = true;
+        if (rise < 0)
+        {
+            risePos = false;
+        }
+        if (run < 0)
+        {
+            runPos = false;
+        }
+        rise = System.Math.Abs(rise);
+        run = System.Math.Abs(run);
+        for (int r = distance; r > 0; r--)
         {
             for (int i = rise; i > 0; i--)
             {
-                if (rise < 0)
+                if (!risePos)
                 {
                     transform.Translate(Vector3.down * speed * Time.deltaTime);
                 }
-                else if (rise > 0)
+                else if (risePos)
                 {
                     transform.Translate(Vector3.up * speed * Time.deltaTime);
                 }
             }
             for (int k = run; k > 0; k--)
             {
-                if (run < 0)
+                if (!runPos)
                 {
                     transform.Translate(Vector3.left * speed * Time.deltaTime);
                 }
-                else if (run > 0)
+                else if (runPos)
                 {
                     transform.Translate(Vector3.right * speed * Time.deltaTime);
                 }
@@ -53,7 +66,7 @@ public class ShootScript : MonoBehaviour
 
     public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart)
     {
-      //GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
+     GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
         StartCoroutine(shoot(xLocation, yLocation));
     }
 }

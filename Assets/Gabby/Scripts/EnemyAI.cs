@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
         distance = Vector3.Distance(target.transform.position, transform.position); //constantly get the distance
 
 
-        if (distance > 10) //move closer
+        if (distance > 10 && hasBullet) //move closer
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move right
             {
@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (distance < 7) //move away
+        if (distance < 7 || (!hasBullet && distance < 15)) //move away if player gets too close or if the enemy is out of ammo
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move left
             {
@@ -72,6 +72,16 @@ public class EnemyAI : MonoBehaviour
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }
+        if (distance > 14 && !hasBullet)
+        {
+            StartCoroutine(reload());
+            hasBullet = true;
+        }
         
+    }
+
+    public IEnumerator reload() //reload when safe
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 }

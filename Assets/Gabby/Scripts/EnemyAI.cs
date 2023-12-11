@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
         distance = Vector3.Distance(target.transform.position, transform.position); //constantly get the distance
 
 
-        if (distance > 10 && hasBullet) //move closer
+        if (distance > 10 && hasBullet && health > 0) //move closer
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move right
             {
@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (distance < 7 || (!hasBullet && distance < 20)) //move away if player gets too close or if the enemy is out of ammo
+        if (distance < 7 || (!hasBullet && distance < 20) && health > 0) //move away if player gets too close or if the enemy is out of ammo
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move left
             {
@@ -67,21 +67,25 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (distance <= 10 && hasBullet) //shoot
+        if (distance <= 10 && hasBullet && health > 0) //shoot
         {
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }
-        if (distance > 19 && !hasBullet)
+        if (distance > 19 && !hasBullet && health > 0)
         {
             StartCoroutine(reload());
-            hasBullet = true;
+            //hasBullet = true;
         }
-        
+        if (health <= 0)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     public IEnumerator reload() //reload when safe
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
+        hasBullet = true;
     }
 }

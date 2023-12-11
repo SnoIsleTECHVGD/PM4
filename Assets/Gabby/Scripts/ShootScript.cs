@@ -15,7 +15,7 @@ public class ShootScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        distance = 150;
     }
 
     public IEnumerator shoot(float xLocation, float yLocation)

@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (distance < 7 || (!hasBullet && distance < 15)) //move away if player gets too close or if the enemy is out of ammo
+        if (distance < 7 || (!hasBullet && distance < 20)) //move away if player gets too close or if the enemy is out of ammo
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move left
             {
@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }
-        if (distance > 14 && !hasBullet)
+        if (distance > 19 && !hasBullet)
         {
             StartCoroutine(reload());
             hasBullet = true;

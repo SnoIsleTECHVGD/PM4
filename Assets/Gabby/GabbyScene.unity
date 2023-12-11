@@ -584,7 +584,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.9111888, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.16600259, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -602,7 +602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893467641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.32, y: 3.98, z: 0}
+  m_LocalPosition: {x: 7.25, y: 4.23, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -659,20 +659,29 @@ TrailRenderer:
       - serializedVersion: 3
         time: 0.013290405
         value: 0.2538452
-        inSlope: 0.35622135
-        outSlope: 0.35622135
+        inSlope: 1.8003128
+        outSlope: 1.8003128
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.17508303
+        outWeight: 0.2511587
+      - serializedVersion: 3
+        time: 0.27798986
+        value: 0.5714286
+        inSlope: -1.6759068
+        outSlope: -1.6759068
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33057263
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0.5980067
-        outSlope: 0.5980067
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.24210656
+        inWeight: 0.2758889
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

@@ -9,17 +9,20 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<TrailRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        distance = 150;
     }
 
-    public IEnumerator shoot(float xLocation, float yLocation)
+    public IEnumerator shoot(float xLocation, float yLocation) //shoot method
     {
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<TrailRenderer>().enabled = true;
         yield return new WaitForSeconds(0.001f);
         int rise = (int) (yLocation - transform.position.y);
         int run = (int) (xLocation - transform.position.x);
@@ -61,12 +64,13 @@ public class ShootScript : MonoBehaviour
             }
             yield return new WaitForSeconds(0.002f);
         }
-        
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart)
+    public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting
     {
-     GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
+        GetComponent<TrailRenderer>().enabled = false;
+        GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
         StartCoroutine(shoot(xLocation, yLocation));
     }
 }

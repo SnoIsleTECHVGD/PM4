@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
-    public void Start()
+    public void Play()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("MasterScene");
     }
 
     public void Quit()

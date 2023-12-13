@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 2b8c326958ef59c4aa96de2d9a052616
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6252480304555925240
+    second: Antagonist_Sprite_Sheet_0
+  - first:
+      213: -3119645599004507207
+    second: Antagonist_Sprite_Sheet_1
+  - first:
+      213: 1287673456042600638
+    second: Antagonist_Sprite_Sheet_2
+  - first:
+      213: -5082110262913160271
+    second: Antagonist_Sprite_Sheet_3
+  - first:
+      213: 806777428096218225
+    second: Antagonist_Sprite_Sheet_4
+  - first:
+      213: -4416942224381348077
+    second: Antagonist_Sprite_Sheet_5
+  - first:
+      213: 5775826943532642363
+    second: Antagonist_Sprite_Sheet_6
+  - first:
+      213: 8142635782991114386
+    second: Antagonist_Sprite_Sheet_7
+  - first:
+      213: 2491797654603051802
+    second: Antagonist_Sprite_Sheet_8
+  - first:
+      213: -1432310074232759032
+    second: Antagonist_Sprite_Sheet_9
+  - first:
+      213: -4613983983586700532
+    second: Antagonist_Sprite_Sheet_10
+  - first:
+      213: 705191537848482125
+    second: Antagonist_Sprite_Sheet_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.54409176, y: 0.4206351}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe9e2eb5b545c650800000000000000
+      internalID: 6252480304555925240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.47795436, y: 0.4265139}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3c9363bdac4b4d0800000000000000
+      internalID: -3119645599004507207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.4265139}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb86e169f2cbed110800000000000000
+      internalID: 1287673456042600638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.517637, y: 0.4441507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bba1bd54a7b879b0800000000000000
+      internalID: -5082110262913160271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.548501, y: 0.4441507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1747a7edbcf323b00800000000000000
+      internalID: 806777428096218225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 64
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.47354543, y: 0.45590842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317735ae27ed3b2c0800000000000000
+      internalID: -4416942224381348077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49559087, y: 0.5617284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30b465e00cd72050800000000000000
+      internalID: 5775826943532642363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.47354516, y: 0.558789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290f1946a14700170800000000000000
+      internalID: 8142635782991114386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.49559104, y: 0.5499706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1334c6c3c4a49220800000000000000
+      internalID: 2491797654603051802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5132278, y: 0.5529101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d942183996f1ce0800000000000000
+      internalID: -1432310074232759032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5529102, y: 0.53821284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0319fa4306d7ffb0800000000000000
+      internalID: -4613983983586700532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Antagonist_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 42.666668
+        height: 64
+      alignment: 9
+      pivot: {x: 0.47354543, y: 0.5529101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49f118a7f759c900800000000000000
+      internalID: 705191537848482125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

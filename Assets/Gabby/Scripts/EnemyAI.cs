@@ -32,18 +32,22 @@ public class EnemyAI : MonoBehaviour
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move right
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 3);
             }
             if (transform.position.x > target.transform.position.x) //if enemy is right of target, move left
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 1);
             }
             if (transform.position.y > target.transform.position.y) //if enemy is above target, move down
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 0);
             }
             if (transform.position.y < target.transform.position.y) //if enemy is below target, move up
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 2);
             }
         }
 
@@ -52,18 +56,22 @@ public class EnemyAI : MonoBehaviour
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move left
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 1);
             }
             if (transform.position.x > target.transform.position.x) //if enemy is right of target, move right
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 3);
             }
             if (transform.position.y > target.transform.position.y) //if enemy is above target, move up
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 2);
             }
             if (transform.position.y < target.transform.position.y) //if enemy is below target, move down
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
+                GetComponent<Animator>().SetInteger("WalkDirection", 0);
             }
         }
 

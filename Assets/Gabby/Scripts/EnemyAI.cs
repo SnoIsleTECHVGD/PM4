@@ -15,6 +15,9 @@ public class EnemyAI : MonoBehaviour
 
     public bool hasBullet = true;
 
+    public float vertMove;
+    public float horMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,29 +28,42 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(target.transform.position, transform.position); //constantly get the distance
-
+        vertMove = System.Math.Abs(transform.position.y - target.transform.position.y);
+        horMove = System.Math.Abs(transform.position.x - target.transform.position.x);
 
         if (distance > 10 && hasBullet && health > 0) //move closer
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move right
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 3);
+                if (horMove > vertMove)  //if enemy is further from target horizontally than vertically, face right
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 3);
+                }
             }
             if (transform.position.x > target.transform.position.x) //if enemy is right of target, move left
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 1);
+                if (horMove > vertMove) //if enemy is further from target horizontally than vertically, face left
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 1);
+                }
             }
             if (transform.position.y > target.transform.position.y) //if enemy is above target, move down
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 0);
+                if (horMove < vertMove) //if enemy is further from target vertically than horizontaly, face down
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 0);
+                }
             }
             if (transform.position.y < target.transform.position.y) //if enemy is below target, move up
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 2);
+                if (horMove < vertMove) //if enemy is further from target vertically than horizontaly, face up
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 2);
+                }
             }
         }
 
@@ -56,27 +72,68 @@ public class EnemyAI : MonoBehaviour
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move left
             {
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 1);
+                if (horMove > vertMove) //face left
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 1);
+                }
             }
             if (transform.position.x > target.transform.position.x) //if enemy is right of target, move right
             {
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 3);
+                if (horMove > vertMove) //face right
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 3);
+                }
             }
             if (transform.position.y > target.transform.position.y) //if enemy is above target, move up
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 2);
+                if (horMove < vertMove) //face up
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 2);
+                }
             }
             if (transform.position.y < target.transform.position.y) //if enemy is below target, move down
             {
                 transform.Translate(Vector3.down * speed * Time.deltaTime);
-                GetComponent<Animator>().SetInteger("WalkDirection", 0);
+                if (horMove < vertMove) //face down
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 0);
+                }
             }
         }
 
         if (distance <= 10 && hasBullet && health > 0) //shoot
         {
+            if (transform.position.x < target.transform.position.x) //if enemy is left of target, look right
+            {
+                if (horMove > vertMove)  //if enemy is further from target horizontally than vertically, face right
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 7);
+                }
+            }
+            if (transform.position.x > target.transform.position.x) //if enemy is right of target, look left
+            {
+                if (horMove > vertMove) //if enemy is further from target horizontally than vertically, face left
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 5);
+                }
+            }
+            if (transform.position.y > target.transform.position.y) //if enemy is above target, look down
+            {
+                if (horMove < vertMove) //if enemy is further from target vertically than horizontaly, face down
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 4);
+                }
+            }
+            if (transform.position.y < target.transform.position.y) //if enemy is below target, look up
+            {
+                if (horMove < vertMove) //if enemy is further from target vertically than horizontaly, face up
+                {
+                    GetComponent<Animator>().SetInteger("WalkDirection", 6);
+                }
+            }
+            //StartCoroutine(shootThenWait());
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }
@@ -95,5 +152,11 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         hasBullet = true;
+    }
+
+    public IEnumerator shootThenWait()
+    {
+        yield return new WaitForSeconds(0.25f);
+        hasBullet = false;
     }
 }

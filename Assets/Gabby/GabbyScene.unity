@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 617792986}
   - component: {fileID: 617792988}
   - component: {fileID: 617792987}
+  - component: {fileID: 617792989}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -495,6 +496,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.65}
   m_EdgeRadius: 0
+--- !u!50 &617792989
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617792983}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &893467641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4262320458992630955, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}

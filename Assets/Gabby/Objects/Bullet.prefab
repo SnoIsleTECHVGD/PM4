@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   distance: 150
+  mainHealth: 3
 --- !u!96 &4262320458992630956
 TrailRenderer:
   serializedVersion: 2

@@ -103,6 +103,8 @@ MonoBehaviour:
   speed: 5
   health: 3
   hasBullet: 1
+  vertMove: 0
+  horMove: 0
 --- !u!70 &2084145183072190616
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

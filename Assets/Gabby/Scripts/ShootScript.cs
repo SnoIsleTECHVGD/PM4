@@ -16,11 +16,6 @@ public class ShootScript : MonoBehaviour
         GetComponent<TrailRenderer>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public IEnumerator shoot(float xLocation, float yLocation) //shoot method
     {
         GetComponent<SpriteRenderer>().enabled = true;
@@ -76,9 +71,17 @@ public class ShootScript : MonoBehaviour
         StartCoroutine(shoot(xLocation, yLocation));
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other) //takes health from player if the player has a characterHealth script and a Player tag
     {
-        mainHealth -= 1;
-        Debug.Log("Target health: " + mainHealth);
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<characterHealth>().health -= 1;
+        }
+        if (other.gameObject.CompareTag("Explosive"))
+        {
+            other.GetComponent<Animator>().SetInteger("aniRun", 2);
+            other.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
     }
 }

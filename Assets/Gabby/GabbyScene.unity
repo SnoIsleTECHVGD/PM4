@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 466832035}
   - component: {fileID: 466832038}
   - component: {fileID: 466832037}
+  - component: {fileID: 466832039}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -351,8 +352,21 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &466832039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466832034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e654fcb496d56a1459021afc90b4815c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &617792983
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +380,7 @@ GameObject:
   - component: {fileID: 617792986}
   - component: {fileID: 617792988}
   - component: {fileID: 617792987}
+  - component: {fileID: 617792989}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -495,11 +510,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.65}
   m_EdgeRadius: 0
+--- !u!50 &617792989
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617792983}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &893467641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4262320458992630955, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
   m_PrefabInstance: {fileID: 4262320458644555602}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &893467647
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893467641}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1058172699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2084145183072190563, guid: 8df191341ba19c045ad49fc75bb2aac9, type: 3}
@@ -719,6 +776,10 @@ PrefabInstance:
       propertyPath: distance
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 4262320458992630953, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4262320458992630955, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
       propertyPath: m_Name
       value: Bullet
@@ -728,12 +789,20 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4262320458992630959, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262320458992630959, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262320458992630959, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.25
+      value: 7.2500005
       objectReference: {fileID: 0}
     - target: {fileID: 4262320458992630959, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.23
+      value: 4.2299995
       objectReference: {fileID: 0}
     - target: {fileID: 4262320458992630959, guid: c9014f2b7c1709344bc98c409017fe0c, type: 3}
       propertyPath: m_LocalPosition.z

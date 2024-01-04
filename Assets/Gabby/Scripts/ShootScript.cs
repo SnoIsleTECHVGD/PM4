@@ -6,6 +6,9 @@ public class ShootScript : MonoBehaviour
 {
     public int speed = 5;
     public int distance;
+
+    public float mainHealth = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,5 +74,11 @@ public class ShootScript : MonoBehaviour
         GetComponent<TrailRenderer>().enabled = false;
         GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
         StartCoroutine(shoot(xLocation, yLocation));
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        mainHealth -= 1;
+        Debug.Log("Target health: " + mainHealth);
     }
 }

@@ -12,6 +12,7 @@ public class TopDownPlayerMovement : MonoBehaviour
     {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+
     }
 
    void FixedUpdate()

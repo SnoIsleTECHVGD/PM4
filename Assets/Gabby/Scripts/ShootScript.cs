@@ -14,12 +14,14 @@ public class ShootScript : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<TrailRenderer>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
     }
 
     public IEnumerator shoot(float xLocation, float yLocation) //shoot method
     {
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<TrailRenderer>().enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
         yield return new WaitForSeconds(0.001f);
         int rise = (int) (yLocation - transform.position.y);
         int run = (int) (xLocation - transform.position.x);
@@ -82,6 +84,12 @@ public class ShootScript : MonoBehaviour
         {
             other.GetComponent<Animator>().SetInteger("aniRun", 2);
             other.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+        if (other.gameObject.CompareTag("Blocker"))
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<TrailRenderer>().enabled = false;
         }
     }
 }

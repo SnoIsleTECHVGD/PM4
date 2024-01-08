@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Explosive
   - Enemy
+  - Blocker
   layers:
   - Default
   - TransparentFX

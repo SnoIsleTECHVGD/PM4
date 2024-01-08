@@ -23,7 +23,7 @@ public class BarrelScript : MonoBehaviour
 
     public IEnumerator waitToDestroy()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
     }

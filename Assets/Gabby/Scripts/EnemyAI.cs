@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float distance;
     public int speed = 5; //subject to change
 
-    public float health = 3; //also subject to change
+    public float health = 1; //also subject to change
 
     public bool hasBullet = true;
 
@@ -150,6 +150,10 @@ public class EnemyAI : MonoBehaviour
         {
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
+        }
+        if (target.GetComponent<characterHealth>().health <= 0)
+        {
+            health = 0;
         }
     }
 

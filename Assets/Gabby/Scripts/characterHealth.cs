@@ -9,6 +9,7 @@ public class characterHealth : MonoBehaviour
     public GameObject healthThree;
     public GameObject healthTwo;
     public GameObject healthOne;
+    public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class characterHealth : MonoBehaviour
         healthThree.SetActive(true);
         healthTwo.SetActive(false);
         healthOne.SetActive(false);
+        loseScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class characterHealth : MonoBehaviour
             healthThree.SetActive(false);
             healthTwo.SetActive(false);
             healthOne.SetActive(false);
+            loseScreen.SetActive(true);
         }
     }
 }

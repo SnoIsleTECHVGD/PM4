@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public KeyCode left, right;
-    public float buildUp;
+    public KeyCode left, right, up, down;
     public float maxSpeed;
 
-    public KeyCode jump;
-    public float jumpForce;
 
     private Rigidbody2D rb2D;
     bool onGround;
@@ -23,21 +20,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(left))
         {
-            rb2D.AddForce(Vector2.left * buildUp);
+            rb2D.AddForce(Vector2.left);
         }
         if (Input.GetKey(right))
         {
-            rb2D.AddForce(Vector2.right * buildUp);
+            rb2D.AddForce(Vector2.right);
         }
 
-        if (Input.GetKeyDown(jump))
-        {
-            if (onGround == true)
-            {
-                onGround = false;
-                rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
 
         rb2D.velocity = new Vector2(Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed), rb2D.velocity.y);
     }

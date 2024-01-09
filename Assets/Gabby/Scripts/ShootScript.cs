@@ -7,8 +7,6 @@ public class ShootScript : MonoBehaviour
     public int speed = 5;
     public int distance;
 
-    public float mainHealth = 3;
-
     // Start is called before the first frame update
     void Start()
     {

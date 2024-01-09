@@ -13,13 +13,12 @@ public class ShootScript : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<TrailRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
     public IEnumerator shoot(float xLocation, float yLocation) //shoot method
     {
-        GetComponent<SpriteRenderer>().enabled = true;
-        GetComponent<TrailRenderer>().enabled = true;
-        GetComponent<CircleCollider2D>().enabled = true;
+        
         yield return new WaitForSeconds(0.001f);
         int rise = (int) (yLocation - transform.position.y);
         int run = (int) (xLocation - transform.position.x);
@@ -35,6 +34,10 @@ public class ShootScript : MonoBehaviour
         }
         rise = System.Math.Abs(rise);
         run = System.Math.Abs(run);
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<TrailRenderer>().enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
+        GetComponent<CircleCollider2D>().isTrigger = true;
         for (int r = distance; r > 0; r--)
         {
             for (int i = rise; i > 0; i--)
@@ -61,7 +64,9 @@ public class ShootScript : MonoBehaviour
             }
             yield return new WaitForSeconds(0.002f);
         }
+        GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
     public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting
@@ -88,6 +93,7 @@ public class ShootScript : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<TrailRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().isTrigger = false;
         }
     }
 }

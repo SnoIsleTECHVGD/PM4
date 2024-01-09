@@ -18,6 +18,9 @@ public class characterHealth : MonoBehaviour
         healthTwo.SetActive(false);
         healthOne.SetActive(false);
         loseScreen.SetActive(false);
+
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<TopDownPlayerMovement>().enabled = true;
     }
 
     // Update is called once per frame
@@ -40,6 +43,8 @@ public class characterHealth : MonoBehaviour
             healthTwo.SetActive(false);
             healthOne.SetActive(false);
             loseScreen.SetActive(true);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<TopDownPlayerMovement>().enabled = false;
         }
     }
 }

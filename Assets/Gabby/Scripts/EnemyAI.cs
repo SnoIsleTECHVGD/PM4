@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
         vertMove = System.Math.Abs(transform.position.y - target.transform.position.y);
         horMove = System.Math.Abs(transform.position.x - target.transform.position.x);
 
-        if (distance > 10 && hasBullet && health > 0 && distance < 35) //move closer, won't chase if you're too far away
+        if (distance > 10 && hasBullet && health > 0 && distance < 20) //move closer, won't chase if you're too far away
         {
             if (transform.position.x < target.transform.position.x) //if enemy is left of target, move right
             {
@@ -133,14 +133,12 @@ public class EnemyAI : MonoBehaviour
                     GetComponent<Animator>().SetInteger("WalkDirection", 6);
                 }
             }
-            //StartCoroutine(shootThenWait());
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }
-        if (distance > 19 && !hasBullet && health > 0)
+        if (distance > 13 && !hasBullet && health > 0) // reload if far enough away
         {
             StartCoroutine(reload());
-            //hasBullet = true;
         }
         if (health <= 0)
         {

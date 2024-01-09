@@ -61,7 +61,7 @@ public class BarrelSurprise : MonoBehaviour
         {
             health = 0;
         }
-        if (distance < 1.5)
+        if (distance < 2)
         {
             GetComponent<BoxCollider2D>().isTrigger = true;
         }

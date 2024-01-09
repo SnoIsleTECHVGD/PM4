@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
+    public void PlayTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
     public void Play()
     {
         SceneManager.LoadScene("MasterScene");
     }
-
     public void Quit()
     {
         Application.Quit();

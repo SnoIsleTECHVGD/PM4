@@ -67,6 +67,7 @@ public class ShootScript : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CircleCollider2D>().isTrigger = false;
+        GetComponent<TrailRenderer>().enabled = false;
     }
 
     public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting
@@ -82,6 +83,10 @@ public class ShootScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<characterHealth>().health -= 1;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<TrailRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().isTrigger = false;
         }
         if (other.gameObject.CompareTag("Explosive"))
         {

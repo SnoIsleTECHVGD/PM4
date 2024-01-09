@@ -133,6 +133,10 @@ public class EnemyAI : MonoBehaviour
                     GetComponent<Animator>().SetInteger("WalkDirection", 6);
                 }
             }
+            bullet.GetComponent<CircleCollider2D>().enabled = false;
+            bullet.GetComponent<SpriteRenderer>().enabled = false;
+            bullet.GetComponent<CircleCollider2D>().isTrigger = false;
+            bullet.GetComponent<TrailRenderer>().enabled = false;
             bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
         }

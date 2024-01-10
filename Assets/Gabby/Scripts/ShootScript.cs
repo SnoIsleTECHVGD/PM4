@@ -16,7 +16,7 @@ public class ShootScript : MonoBehaviour
         GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
-    public IEnumerator shoot(float xLocation, float yLocation) //shoot method
+    public IEnumerator shoot(float xLocation, float yLocation) //shoot method DON'T USE THIS METHOD
     {
         
         yield return new WaitForSeconds(0.001f);
@@ -73,7 +73,7 @@ public class ShootScript : MonoBehaviour
 
     }
 
-    public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting
+    public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting USE THIS METHOD
     {
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;

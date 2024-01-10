@@ -40,6 +40,7 @@ public class ShootScript : MonoBehaviour
         GetComponent<CircleCollider2D>().isTrigger = true;
         for (int r = distance; r > 0; r--)
         {
+
             for (int i = rise; i > 0; i--)
             {
                 if (!risePos)
@@ -63,16 +64,21 @@ public class ShootScript : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(0.002f);
+
         }
-        GetComponent<CircleCollider2D>().enabled = false;
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<CircleCollider2D>().isTrigger = false;
-        GetComponent<TrailRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CircleCollider2D>().isTrigger = false;
+            GetComponent<TrailRenderer>().enabled = false;
+
     }
 
     public void shootWithCoroutine(float xLocation, float yLocation, float xStart, float yStart) //shoot method that allows waiting
     {
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<TrailRenderer>().enabled = false;
+        GetComponent<CircleCollider2D>().isTrigger = false;
         GetComponent<Transform>().position = new Vector3(xStart, yStart, 0);
         StartCoroutine(shoot(xLocation, yLocation));
     }

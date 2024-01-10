@@ -157,6 +157,10 @@ public class EnemyAI : MonoBehaviour
         {
             health = 0;
         }
+        if (distance >= 20)
+        {
+            GetComponent<Animator>().SetInteger("WalkDirection", 8);
+        }
     }
 
     public IEnumerator reload() //reload when safe

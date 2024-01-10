@@ -13,6 +13,7 @@ public class TopDownPlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //GameObject player = GameObject.FindObjectWithTag("Player");
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 

@@ -18,7 +18,7 @@ public class TopDownPlayerMovement : MonoBehaviour
 
         if (Input.GetKey(left))
         {
-            GetComponent<Animator>().SetInteger("WalkDiretion", 2);
+            GetComponent<Animator>().SetInteger("WalkDirection", 2);
         }
 
         if (Input.GetKey(right))

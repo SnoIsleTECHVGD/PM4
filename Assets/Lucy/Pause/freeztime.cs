@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -45,5 +46,8 @@ public class freeztime : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

@@ -7,7 +7,7 @@ public class UIButtons : MonoBehaviour
 {
     public void PlayTutorial()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("YorN");
     }
     public void Play()
     {
@@ -16,5 +16,14 @@ public class UIButtons : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+
+    }
+    public void PlayRealTutorial()
+    {
+        SceneManager.LoadScene("RealTutorial");
     }
 }

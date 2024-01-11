@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class characterHealth : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class characterHealth : MonoBehaviour
     public GameObject healthThree;
     public GameObject healthTwo;
     public GameObject healthOne;
-    public GameObject loseScreen;
+    //public GameObject loseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class characterHealth : MonoBehaviour
         healthThree.SetActive(true);
         healthTwo.SetActive(false);
         healthOne.SetActive(false);
-        loseScreen.SetActive(false);
+        //loseScreen.SetActive(false);
 
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<TopDownPlayerMovement>().enabled = true;
@@ -42,9 +43,10 @@ public class characterHealth : MonoBehaviour
             healthThree.SetActive(false);
             healthTwo.SetActive(false);
             healthOne.SetActive(false);
-            loseScreen.SetActive(true);
+            //loseScreen.SetActive(true);
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<TopDownPlayerMovement>().enabled = false;
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

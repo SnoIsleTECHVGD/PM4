@@ -26,4 +26,8 @@ public class UIButtons : MonoBehaviour
     {
         SceneManager.LoadScene("RealTutorial");
     }
+    public void credits()
+    {
+        SceneManager.LoadScene("credits");
+    }
 }

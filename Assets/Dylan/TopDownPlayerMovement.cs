@@ -9,13 +9,14 @@ public class TopDownPlayerMovement : MonoBehaviour
 
     public float moveSpeed;
     public Rigidbody2D rb2D;
-    private Vector2 moveInput;
+
+    Vector2 movement;
 
     void Update()
     {
         //GameObject player = GameObject.FindObjectWithTag("Player");
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKey(left))
         {
@@ -40,6 +41,6 @@ public class TopDownPlayerMovement : MonoBehaviour
 
    void FixedUpdate()
     {
-        rb2D.MovePosition(rb2D.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        rb2D.MovePosition(rb2D.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

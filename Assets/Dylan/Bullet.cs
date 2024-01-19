@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
-    
+    public GameObject RotatePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,28 @@ public class Bullet : MonoBehaviour
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyAI>().health -= 1;
 
-    // Update is called once per frame
+        }
+
+        if (collision.gameObject.CompareTag("Explosive"))
+        {
+            collision.GetComponent<Animator>().SetInteger("aniRun", 2);
+            collision.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+
+        if (collision.gameObject.CompareTag("Blocker"))
+        {
+            Destroy(RotatePoint.GetComponent<Shooting>().newBullet);
+        }
+    }
+    
+
+        // Update is called once per frame
     void Update()
     {
         

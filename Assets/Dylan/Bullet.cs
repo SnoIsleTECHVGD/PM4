@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyAI>().health -= 1;
+            Destroy(RotatePoint.GetComponent<Shooting>().newBullet);
 
         }
 

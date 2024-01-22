@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform bulletTransform;
     public bool canFire;
-    private float timer;
+    private double timer;
     public float timeBetweenFiring;
     public GameObject newBullet;
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
             if(timer > timeBetweenFiring)
             {
                 canFire = true;
-                timer = 0;
+                timer = -0.35;
             }
         }
 

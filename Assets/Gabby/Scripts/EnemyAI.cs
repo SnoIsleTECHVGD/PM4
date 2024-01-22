@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject target;
     public GameObject bullet;
+    public GameObject newBullet;
 
     public float distance;
     public int speed = 5; //subject to change
@@ -133,12 +134,14 @@ public class EnemyAI : MonoBehaviour
                     GetComponent<Animator>().SetInteger("WalkDirection", 6);
                 }
             }
-            bullet.GetComponent<CircleCollider2D>().enabled = false;
-            bullet.GetComponent<SpriteRenderer>().enabled = false;
-            bullet.GetComponent<CircleCollider2D>().isTrigger = false;
-            bullet.GetComponent<TrailRenderer>().enabled = false;
-            bullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
+            newBullet = Instantiate(bullet, new Vector3(0,0,0), Quaternion.identity);
+            newBullet.GetComponent<CircleCollider2D>().enabled = false;
+            newBullet.GetComponent<SpriteRenderer>().enabled = false;
+            newBullet.GetComponent<CircleCollider2D>().isTrigger = false;
+            newBullet.GetComponent<TrailRenderer>().enabled = false;
+            newBullet.GetComponent<ShootScript>().shootWithCoroutine(target.transform.position.x, target.transform.position.y, transform.position.x, transform.position.y);
             hasBullet = false;
+            Destroy(newBullet, 1.0f);
         }
         if (distance > 13 && !hasBullet && health > 0) // reload if far enough away
         {
